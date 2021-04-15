@@ -1,0 +1,19 @@
+= frameless-zsh
+:toc:
+
+Useful tips for configuring `zsh` without frameworks like oh-my-zsh and prezto.
+
+== Editing (ZLE)
+
+=== Run a command without losing current command line input
+
+Use `Alt + Q` to save the current command line and execute another command. Afterwards
+the old command line is restored automatically (uses the `push-line` ZLE command):
+
+[source,zsh]
+----
+$ cp file1 ~/dir1  # press alt+q
+$                  # command line goes blank
+$ ls ~/dir1        # execute a command
+$ cp file1 ~/dir1  # old command line restored
+----
